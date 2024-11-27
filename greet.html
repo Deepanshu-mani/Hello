@@ -6,28 +6,31 @@
   <title>Greeting Page</title>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
       font-family: Arial, sans-serif;
+      background-color: #1f2937; /* Dark background */
+      color: white; /* White text */
+      text-align: center;
+      padding: 50px;
     }
-    h1 {
-      font-size: 3rem;
-      color: #333;
+    .greeting-message {
+      font-size: 2rem;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1 id="greeting-message">Hello, Guest!</h1>
+  <h1>Welcome to the Greeting Page</h1>
+  <p class="greeting-message" id="greeting-message">Loading...</p> <!-- Message will be updated here -->
 
   <script>
-    // Function to get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const name = urlParams.get('name'); 
+    const name = urlParams.get('name'); // Get the 'name' parameter from the URL
+
+    // If a name is provided, update the message
     if (name) {
       document.getElementById('greeting-message').textContent = `Hello, ${name}!`;
+    } else {
+      document.getElementById('greeting-message').textContent = 'Hello, Guest!';
     }
   </script>
 </body>
