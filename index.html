@@ -5,22 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Greeting Page</title>
   <style>
+    /* Overall body style */
     body {
       font-family: Arial, sans-serif;
-      background-color: #1f2937; /* Dark background */
+      background-color: #141414; /* Darkest gray background (#141414) */
       color: white; /* White text */
       text-align: center;
       padding: 50px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+
+    /* Heading Style */
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #e5e7eb; /* Light gray */
+    }
+
+    /* Greeting message style */
     .greeting-message {
       font-size: 2rem;
       margin-top: 20px;
+      font-weight: normal;
+      color: #d1d5db; /* Slightly lighter gray */
+    }
+
+    /* Styling for container */
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background-color: rgba(20, 20, 20, 0.85); /* Slightly transparent dark background */
+      border: #141414;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px); /* Blur background for a modern effect */
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to the Greeting Page</h1>
-  <p class="greeting-message" id="greeting-message">Loading...</p> <!-- Message will be updated here -->
+  <div class="container">
+    <p class="greeting-message" id="greeting-message">Loading...</p> <!-- Message will be updated here -->
+  </div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -30,7 +62,7 @@
     if (name) {
       document.getElementById('greeting-message').textContent = `Hello, ${name}!`;
     } else {
-      document.getElementById('greeting-message').textContent = 'Hello, Guest!';
+      document.getElementById('greeting-message').textContent = 'Hello, Mate!';
     }
   </script>
 </body>
