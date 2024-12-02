@@ -57,6 +57,8 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('name'); // Get the 'name' parameter from the URL
+    const email = urlParams.get('email');
+    const photo = urlParams.get('photo');
 
     // If a name is provided, update the message
     if (name) {
